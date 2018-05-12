@@ -405,7 +405,7 @@ class Format {
 
         if (empty($callback) === TRUE)
         {
-            return json_encode(array('data'=>$data));
+            return json_encode(array('kode'=>1,'result'=>$data));
             //array('kode'=>'1','result'=>$data)
         }
 
