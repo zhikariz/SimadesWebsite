@@ -265,6 +265,27 @@
             </div>    
             
         </div>
+         <div class="form-group">
+           
+            <div class="col-sm-5">
+                                
+            </div>
+            <label for="varchar" class="col-sm-2 control-label">Dusun<?php echo form_error('id_dusun') ?></label>
+            <div class="col-sm-3">
+            <?php
+                $options7[NULL] = "---";
+                 foreach ($list_dusun as $dusun)
+                {
+                    $options7[$dusun->id_dusun] = $dusun->dusun;
+                }
+                                            
+                echo form_dropdown('id_dusun', $options7, $id_dusun, array('class' => 'form-control','id'=>'id_dusun','onkeypress'=>'return isNumberKeyTrue(event)'));
+                
+            ?>    
+            <!-- <input type="text" class="form-control" name="id_dusun" id="id_dusun" placeholder="Dusun" onkeypress="return isNumberKeyTrue(event)" value="<?php echo $id_dusun; ?>"/> -->
+            </div>    
+            
+        </div>
         <div class="form-group">
            
             <div class="col-sm-5">

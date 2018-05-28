@@ -16,7 +16,7 @@ class Kk extends CI_Controller
     {
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
-        
+
         if ($q <> '') {
             $config['base_url'] = base_url() . 'kk/index.html?q=' . urlencode($q);
             $config['first_url'] = base_url() . 'kk/index.html?q=' . urlencode($q);
@@ -43,7 +43,7 @@ class Kk extends CI_Controller
         $this->load->view('kk/kk_list', $data);
     }
 
-    public function read($id) 
+    public function read($id)
     {
         $row = $this->Kk_model->get_by_id($id);
         if ($row) {
@@ -65,7 +65,7 @@ class Kk extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create()
     {
         $data = array(
             'button' => 'Create',
@@ -82,8 +82,8 @@ class Kk extends CI_Controller
 	);
         $this->load->view('kk/kk_form', $data);
     }
-    
-    public function create_action() 
+
+    public function create_action()
     {
         $this->_rules();
 
@@ -106,8 +106,8 @@ class Kk extends CI_Controller
             redirect(site_url('kk'));
         }
     }
-    
-    public function update($id) 
+
+    public function update($id)
     {
         $row = $this->Kk_model->get_by_id($id);
 
@@ -131,8 +131,8 @@ class Kk extends CI_Controller
             redirect(site_url('kk'));
         }
     }
-    
-    public function update_action() 
+
+    public function update_action()
     {
         $this->_rules();
 
@@ -155,8 +155,8 @@ class Kk extends CI_Controller
             redirect(site_url('kk'));
         }
     }
-    
-    public function delete($id) 
+
+    public function delete($id)
     {
         $row = $this->Kk_model->get_by_id($id);
 
@@ -170,7 +170,7 @@ class Kk extends CI_Controller
         }
     }
 
-    public function _rules() 
+    public function _rules()
     {
 	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 	$this->form_validation->set_rules('rt', 'rt', 'trim|required');

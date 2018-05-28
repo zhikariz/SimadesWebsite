@@ -20,6 +20,7 @@ class Kedatangan extends CI_Controller
         $this->load->model('Profil_desa_model');
         $this->load->model('Layanan_model');
         $this->load->library('form_validation');
+        $this->load->model('Dusun_model');
     }
 
     public function index()
@@ -91,6 +92,8 @@ class Kedatangan extends CI_Controller
         $list_hubkel = $this->Hubkel_model->get_all();
         $list_pendidikan = $this->Pendidikan_model->get_all();
         $data_desa = $this->Profil_desa_model->get_by_id(1);
+        $list_dusun = $this->Dusun_model->get_all();
+        
 
         $data = array(
             'button' => 'Tambah',
@@ -125,6 +128,8 @@ class Kedatangan extends CI_Controller
         'alamat_baru'    => set_value('alamat_baru'),
         'rt_baru' => set_value('rt_baru'),
         'rw_baru' => set_value('rw_baru'),
+        'list_dusun'    => $list_dusun,
+        'id_dusun' => set_value('id_dusun'),
         'kelurahan' => set_value('kelurahan', $data_desa->nm_desa),
         'kecamatan' => set_value('kecamatan', $data_desa->kecamatan),
         'kabupaten' => set_value('kabupaten', $data_desa->kabupaten),
@@ -169,6 +174,7 @@ class Kedatangan extends CI_Controller
             'kecamatan'     => $this->input->post('kecamatan',TRUE),
             'kabupaten'     => $this->input->post('kabupaten',TRUE),
             'propinsi'      => $this->input->post('propinsi',TRUE),
+            'id_dusun'      => $this->input->post('id_dusun',TRUE),
 
             );
 
@@ -190,6 +196,7 @@ class Kedatangan extends CI_Controller
             'id_hubkel'     => $this->input->post('id_hubkel',TRUE),
             'id_pendidikan' => $this->input->post('id_pendidikan',TRUE),
             'status'        => 'MD',
+            'tgl_mutasi'    => date('Y-m-d'),
 
             );
 

@@ -39,11 +39,13 @@ $this->simple_login->cek_login();
           document.getElementById('rt_baru').readOnly=true;
           document.getElementById('rw_baru').readOnly=true;
           document.getElementById('cari').disabled=false;
+          document.getElementById('id_dusun').disabled=true;
       } else if(alasan.value == "Pindah Tempat Tinggal"){
           document.getElementById('no_kk_baru').readOnly=false;
           document.getElementById('alamat_baru').readOnly=false;
           document.getElementById('rt_baru').readOnly=false;
           document.getElementById('rw_baru').readOnly=false;
+          document.getElementById('id_dusun').disabled=false;
           document.getElementById('cari').disabled=true;
       }
     };
